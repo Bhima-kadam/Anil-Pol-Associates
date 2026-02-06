@@ -1,0 +1,271 @@
+:root {
+    --gold: #C5A059;
+    --charcoal: #1a1a1a;
+    --white: #ffffff;
+    --text-grey: #555555;
+    --light-bg: #fdfdfdfb;
+    --primary-teal: #008080; 
+    --navy-dark: #2c3e50;
+    --ghost-teal: #f2f8f8; /* Added for a professional matching background */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: var(--text-grey); line-height: 1.8; background: var(--white); }
+
+/* --- HEADER --- */
+.main-header {
+    background-color: var(--primary-teal) !important;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo-area { display: flex; align-items: center; gap: 15px; cursor: pointer; }
+
+.main-logo {
+    height: 55px;
+    filter: brightness(1.1);
+    mix-blend-mode: screen; 
+}
+
+.logo-text h1 {
+    color: var(--white);
+    font-size: 19px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.logo-text span {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+}
+
+/* --- NAVIGATION --- */
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 30px; 
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active { 
+    color: var(--gold); 
+    text-shadow: 0px 0px 10px rgba(197, 160, 89, 0.3);
+}
+
+/* --- HERO --- */
+.hero-section {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg5.jpeg') no-repeat center center/cover;
+    display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
+}
+
+.hero-overlay h2 { font-family: 'Playfair Display', serif; font-size: 56px; margin-bottom: 20px; }
+.hero-overlay p { font-size: 18px; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; }
+.hero-line { width: 80px; height: 3px; background: var(--gold); margin: 25px auto; }
+
+/* --- ABOUT SECTION --- */
+.about-container {
+    width: 100%;
+    background-color: var(--ghost-teal); /* Changed to full-width matching background */
+    padding: 60px 0; /* Professional spacing */
+    border-bottom: 1px solid #eeeeee;
+}
+
+.about-flex {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 50px;
+    align-items: center; /* Better vertical balance */
+    justify-content: space-between;
+}
+
+.about-text-container { 
+    flex: 1.5; 
+    /* Background removed from here to allow full-width color */
+}
+
+.about-text-container h2 {
+    color: var(--primary-teal);
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.about-text-container h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--gold);
+    margin-top: 8px;
+}
+
+.about-text-container p { 
+    font-size: 17px; 
+    line-height: 1.7; 
+    color: #444; 
+    text-align: justify;
+    max-width: 95%;
+}
+
+.about-image { 
+    flex: 1; 
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.about-image img { 
+    width: 100%; 
+    max-width: 450px; 
+    height: auto;
+    border-radius: 4px; 
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.1); 
+}
+
+/* --- SERVICES --- */
+.services-bg { background: #f8f8f8; padding: 60px 0; }
+.section-title { 
+    text-align: center; 
+    font-size: 34px; 
+    margin-bottom: 50px; 
+    font-family: 'Playfair Display', serif; 
+    color: var(--primary-teal); /* Changed to Teal for consistency */
+    text-transform: uppercase;
+}
+
+.netflix-slider { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; scrollbar-width: none; }
+.service-card { flex: 0 0 300px; height: 400px; position: relative; overflow: hidden; border-radius: 4px; transition: 0.5s; }
+.service-card img { width: 100%; height: 100%; object-fit: cover; }
+.card-overlay {
+    position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    display: flex; align-items: flex-end; padding: 20px; transition: 0.3s;
+}
+.service-card:hover { transform: translateY(-10px); }
+.card-overlay h3 { color: var(--white); font-size: 18px; letter-spacing: 1px; }
+
+/* --- FOOTER --- */
+.main-footer { background: var(--charcoal); color: #777; text-align: center; padding: 50px 0; font-size: 13px; border-top: 1px solid #333; }
+
+/* --- RESPONSIVE FIXES --- */
+@media (max-width: 768px) {
+    .about-flex { 
+        flex-direction: column; 
+        text-align: center; 
+        gap: 30px;
+    }
+    
+    .about-image {
+        justify-content: center;
+    }
+
+    .about-text-container h2::after {
+        margin: 8px auto;
+    }
+
+    .hero-overlay h2 { font-size: 36px; }
+}
+/* --- BOX MODEL STYLING --- */
+
+/* Centers everything and gives the page structure */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Forces Mission and Vision to be side-by-side boxes */
+.box-grid {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* This creates the professional "Box" look from your screenshot */
+.info-box {
+    flex: 1;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    /* This shadow is the secret to the professional look */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
+    border-top: 5px solid var(--primary-teal);
+    transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-10px);
+    border-top-color: var(--gold);
+}
+
+.box-icon { font-size: 45px; margin-bottom: 15px; }
+
+/* Styling the Banner Title */
+.page-header-banner {
+    background-color: #f4f7f7; /* Very light teal tint */
+    padding: 60px 0;
+    text-align: center;
+}
+
+.page-header-banner h1 {
+    font-size: 42px;
+    color: var(--primary-teal);
+    text-transform: uppercase;
+}
+
+/* Owner/Leadership Card */
+.owner-card {
+    background: white;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-left: 6px solid var(--primary-teal);
+    border-radius: 8px;
+}
+
+.owner-flex {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.owner-img img {
+    width: 280px;
+    border-radius: 8px;
+}
+
+/* Mobile Fix: Stacks boxes on top of each other */
+@media (max-width: 768px) {
+    .box-grid, .owner-flex {
+        flex-direction: column;
+    }
+}
