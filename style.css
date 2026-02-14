@@ -358,3 +358,8 @@ body {
 .nav-links a {
     padding: 5px 2px; /* Gives links a little more breathing room */
 }
+.about-text-container p {
+        padding: 0 5px;        /* Prevents text from hitting the screen edge */
+        font-size: 16px;       /* Slightly smaller for better mobile reading */
+    }
+}
