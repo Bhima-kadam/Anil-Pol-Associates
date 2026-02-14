@@ -33,7 +33,7 @@ body {
     z-index: 1000;
     width: 100%;
     background-color: beige !important; /* Force the beige background */
-    height: 80px; /* Fixed height for consistency */
+    min-height: 80px; /* Fixed height for consistency */
     display: flex;
     align-items: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -73,7 +73,7 @@ body {
     align-items: center; /* Align text to the center near logo */
     margin-left: -25px; /* Pull text block closer to the CA image */
 }
-
+/* Anil Associates Fonts*/
 .logo-text h1 { 
     font-size: 20px; 
     color: #002b5c; /* Your Navy color */
@@ -81,10 +81,10 @@ body {
     margin: 0; 
     line-height: 1;
 }
-
+/*Charted Accoount font*/
 .logo-text span { 
-    font-size: 11px; 
-    color: #0d6efd; /* Your Blue color */
+    font-size: 13px; 
+    color: green; 
     text-transform: uppercase; 
     font-weight: 600;
     margin-top: 2px;
@@ -273,15 +273,7 @@ body {
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-    .about-flex, .contact-flex-wrapper { 
-        flex-direction: column; 
-        text-align: center; 
-    }
-    .hero-section h2 { font-size: 28px; }
-    .nav-links { gap: 15px; }
-    .nav-links a { font-size: 14px; }
-}
+
 /* --- MISSION & VISION BOX MODEL --- */
 .mission-grid {
     display: flex;
@@ -312,9 +304,55 @@ body {
     font-size: 22px;
 }
 
-/* Responsive adjustment for mobile */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+/* --- FINAL RESPONSIVE FIX --- */
 @media (max-width: 768px) {
-    .mission-grid {
-        flex-direction: column;
+    .main-header {
+        height: auto !important; /* Allows header to grow to fit logo and menu */
+        padding: 15px 0 !important;
     }
+
+    .header-container {
+        flex-direction: column !important; /* Stacks everything vertically */
+        gap: 10px !important;
+    }
+
+    .logo-text {
+        margin-left: 0 !important; /* Centers the name */
+        text-align: center;
+    }
+
+    .nav-box {
+        margin-right: 0 !important;
+        width: 100%;
+    }
+
+    .nav-links {
+        justify-content: center !important;
+        gap: 12px !important;
+        flex-wrap: wrap; /* Keeps links inside the screen */
+    }
+
+    .hero-section h2 {
+        font-size: 24px !important; /* Shrinks the big welcome text */
+    }
+}
+.nav-links a {
+    padding: 5px 2px; /* Gives links a little more breathing room */
 }
