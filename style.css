@@ -189,6 +189,8 @@ body {
     font-size: 17px; 
     color: var(--text-grey); 
     line-height: 1.8;
+    text-align: justify;       /* This justifies the text */
+    text-justify: inter-word;  /* This helps spacing look professional */
 }
 
 /* --- SERVICES SLIDER (Netflix Style) --- */
